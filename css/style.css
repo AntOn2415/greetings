@@ -1,0 +1,312 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #f0e8d9; /* Колір "старого паперу" */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Контейнер книги */
+.book-container {
+  width: 90vw;
+  max-width: 800px;
+  height: 90vh;
+  max-height: 600px;
+  perspective: 2500px;
+  position: relative;
+}
+
+/* Кожна сторінка */
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fffaf0; /* Дуже світлий кремовий колір */
+  border: 1px solid #d1c8b3;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  transform-origin: left center;
+  display: block; /* Змінив на block для вільного потоку вмісту */
+  padding: 3rem 4rem; /* Збільшив відступи для "полів" книги */
+  box-sizing: border-box; /* Гарантуємо, що відступи не вплинуть на розмір */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.6s ease, box-shadow 0.3s ease;
+  line-height: 1.6; /* Збільшив міжрядковий інтервал для кращої читабельності */
+  color: #333; /* Темно-сірий текст для м'якшого контрасту */
+  text-align: left; /* Вирівнювання тексту по лівому краю, як у книзі */
+  overflow-y: auto;
+}
+
+/* Заголовок сторінки */
+.page h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #5c4a3b;
+  text-align: center;
+  position: relative;
+}
+
+.page h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #d1c8b3;
+  margin: 1rem auto 0; /* Лінія під заголовком */
+}
+
+/* Загальні стилі для параграфів */
+.page p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* Блоки з контентом, як анкети або побажання */
+.content-block {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #fff8ee;
+  border-left: 4px solid #a0522d;
+  border-radius: 4px;
+}
+
+/* Стилі для радіокнопок */
+.flex.flex-col.space-y-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label.flex.items-center.space-x-2 {
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  accent-color: #a0522d;
+}
+
+/* Стилі для обкладинок */
+.page-cover {
+  background-color: #a0522d; /* Теплий коричневий колір */
+  color: white;
+  font-family: "Playfair Display", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  background-image: url("../images/background-image.png"); /* Замініть на правильний шлях */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-cover h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Стилі для сертифіката */
+.certificate-page {
+  text-align: center;
+}
+
+.certificate-page h2 {
+  margin-bottom: 1rem;
+}
+
+.certificate-page img {
+  border: 1px solid #d1c8b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 1.5rem;
+}
+
+.certificate-page p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Стилі для кнопки */
+.btn {
+  background-color: #a0522d;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.btn:hover {
+  background-color: #8b4513;
+}
+
+/* Нові стилі для фотогалереї */
+.photo-grid {
+  display: flex;
+  flex-wrap: wrap; /* Дозволяє елементам переноситися на новий рядок */
+  gap: 1rem; /* Відстань між фотографіями */
+  justify-content: center; /* Вирівнювання по центру, якщо фотографій менше двох */
+  margin-top: 2rem;
+}
+
+.photo-item {
+  flex: 1 1 calc(50% - 1rem); /* Кожен елемент займає близько 50% ширини з урахуванням відступу */
+  box-sizing: border-box;
+}
+
+.photo-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Заокруглення кутів для фото */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Видалити або замінити старі стилі, які вирівнюють фотографії */
+.placeholder {
+  /* Ви можете видалити цей клас, якщо він більше не потрібен */
+  display: none;
+}
+
+/* Приховування елементів */
+.hidden {
+  display: none;
+}
+
+/* Анімації та перегортання (не змінювалися) */
+.flipped {
+  transform: rotateY(-180deg);
+}
+
+.page:last-child {
+  pointer-events: none;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), transparent 30%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s ease;
+}
+
+.page.flipping::before {
+  opacity: 1;
+}
+
+.page::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0) 50%);
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.1s ease, transform 0.1s ease;
+}
+
+.page.flipping::after {
+  opacity: 1;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .book-container {
+    width: 95vw;
+    height: 75vh;
+  }
+  .page {
+    padding: 1rem 2rem;
+  }
+  .page-cover h1 {
+    font-size: 2.5rem;
+  }
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/* Модальне вікно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000; /* Перекриває всі інші елементи */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(240, 238, 229, 0.9);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Вміст модального вікна (зображення) */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(234, 234, 209, 0.762);
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+/* Кнопка закриття */
+.modal-close {
+  position: absolute;
+  top: 25px;
+  right: 45px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #bbb;
+  text-decoration: none;
+}
+
+/* Анімація появи модального вікна */
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}

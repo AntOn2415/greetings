@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Книга Побажань</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="book-container" id="book">
+      <div class="page page-cover text-center">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4">Книга Побажань</h1>
+        <p class="text-xl sm:text-2xl italic">
+          Нашому Другу і Пастору <strong>Олександру Мешкову</strong>
+        </p>
+      </div>
+
+      <div class="page">
+        <h2>Три питання</h2>
+        <p>Відповідайте чесно, як ви це вмієте.</p>
+        <div class="space-y-6">
+          <div class="content-block">
+            <p class="font-medium mb-2">1. Яка найбільша спокуса для пастора?</p>
+            <div class="flex flex-col space-y-2">
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="q1" value="funny" />
+                <span>Забути, де поклав Біблію.</span>
+              </label>
+              <label class="flex items-center space-x-2 correct-answer">
+                <input type="radio" name="q1" value="correct" />
+                <span>Гордість і самовпевненість.</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="q1" value="funny" />
+                <span>Проповідувати більше 20 хв.</span>
+              </label>
+            </div>
+          </div>
+          <div class="content-block">
+            <p class="font-medium mb-2">
+              2. Згідно з 1 Тимофія 5:17, як мають бути вшановані старійшини?
+            </p>
+            <div class="flex flex-col space-y-2">
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="q2" value="funny" />
+                <span>Подвійним обідом після служіння.</span>
+              </label>
+              <label class="flex items-center space-x-2 correct-answer">
+                <input type="radio" name="q2" value="correct" />
+                <span>Подвійною честю.</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="q2" value="funny" />
+                <span>Кожен тиждень новою книгою.</span>
+              </label>
+            </div>
+          </div>
+          <div class="content-block">
+            <p class="font-medium mb-2">3. Яке пасторське служіння є «достатнім»?</p>
+            <div class="flex flex-col space-y-2">
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="q3" value="funny" />
+                <span>Служіння з великим фінансовим успіхом.</span>
+              </label>
+              <label class="flex items-center space-x-2 correct-answer">
+                <input type="radio" name="q3" value="correct" />
+                <span>Служіння з Божої благодаті.</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="q3" value="funny" />
+                <span>Служіння, яке задовольняє всіх членів церкви.</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page">
+        <h2>Бібліотека сердець</h2>
+        <div id="wishes-container" class="space-y-6 content-block">
+          <p>
+            "Людина, яка вважає пасторське служіння легким життям, знайде, що воно принесе їй важку
+            смерть." - <strong>Чарльз Сперджен</strong>
+          </p>
+          <p>
+            "Проповідуй Христа, і Христа, і Христа, і Христа — і нікого іншого, окрім Христа." -
+            <strong>Чарльз Сперджен</strong>
+          </p>
+          <p>
+            "Саша, дякуємо Богові, що знаємо тебе. Бажаємо, щоб Господь зміцнював і благословляв
+            тебе в цьому служінні так, щоб ти став благословенням для багатьох." -
+            <strong>Сім'я Григорʼєвих</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="page certificate-page">
+        <h2 class="visually-hidden">Сертифікат</h2>
+        <img
+          src="./images/c.png"
+          alt="Подарунковий сертифікат"
+          style="max-width: 100%; margin-bottom: 1rem"
+        />
+        <p>Цей сертифікат на суму 1000грн є подарунком від Сімї Григорʼєвих.</p>
+        <button id="activate-button" class="btn">Активувати сертифікат</button>
+        <div id="activation-message" class="hidden">
+          Вітаємо! Ваш сертифікат успішно активовано. Для уточнення деталей і наступних кроків, будь
+          ласка, зверніться до дарувальника сертифіката.
+        </div>
+      </div>
+
+      <div class="page">
+        <h2>Фотогалерея</h2>
+        <p>Ця сторінка буде оновлена після події.</p>
+        <div class="photo-grid">
+          <div class="photo-item">
+            <a href="#" class="photo-link">
+              <img src="./images/s.png" data-src="./images/s.png" alt="Подарунковий сертифікат" />
+            </a>
+          </div>
+          <div class="photo-item">
+            <a href="#" class="photo-link">
+              <img src="./images/m.png" data-src="./images/m.png" alt="Подарунковий сертифікат" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="photo-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-image" />
+      </div>
+
+      <div class="page page-cover text-center">
+        <p class="text-2xl">З любов'ю від спільноти</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
