@@ -17,11 +17,12 @@
       <div class="page page-cover text-center">
         <h1 class="text-4xl sm:text-5xl font-bold mb-4">Книга Побажань</h1>
         <p class="text-xl sm:text-2xl italic">
-          Нашому Другу і Пастору <strong>Олександру Мешкову</strong>
+          Нашому Другу і Пастору <strong>Олександру Мєшкову</strong>
         </p>
       </div>
 
       <div class="page">
+        <div class="shadow-overlay"></div>
         <h2>Три питання</h2>
         <p>Відповідайте чесно, як ви це вмієте.</p>
         <div class="space-y-6">
@@ -82,6 +83,7 @@
       </div>
 
       <div class="page">
+        <div class="shadow-overlay"></div>
         <h2>Бібліотека сердець</h2>
         <div id="wishes-container" class="space-y-6 content-block">
           <p>
@@ -95,19 +97,20 @@
           <p>
             "Саша, дякуємо Богові, що знаємо тебе. Бажаємо, щоб Господь зміцнював і благословляв
             тебе в цьому служінні так, щоб ти став благословенням для багатьох." -
-            <strong>Сім'я Григорʼєвих</strong>
+            <strong>Сім’я Григор'євих</strong>
           </p>
         </div>
       </div>
 
       <div class="page certificate-page">
+        <div class="shadow-overlay"></div>
         <h2 class="visually-hidden">Сертифікат</h2>
         <img
           src="./images/c.png"
           alt="Подарунковий сертифікат"
           style="max-width: 100%; margin-bottom: 1rem"
         />
-        <p>Цей сертифікат на суму 1000грн є подарунком від Сімї Григорʼєвих.</p>
+        <p>Цей сертифікат на суму 1000грн є подарунком від Сім’ї Григор'євих.</p>
         <button id="activate-button" class="btn">Активувати сертифікат</button>
         <div id="activation-message" class="hidden">
           Вітаємо! Ваш сертифікат успішно активовано. Для уточнення деталей і наступних кроків, будь
@@ -115,32 +118,22 @@
         </div>
       </div>
 
-      <div class="page">
-        <h2>Фотогалерея</h2>
-        <p>Ця сторінка буде оновлена після події.</p>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <a href="#" class="photo-link">
-              <img src="./images/s.png" data-src="./images/s.png" alt="Подарунковий сертифікат" />
-            </a>
-          </div>
-          <div class="photo-item">
-            <a href="#" class="photo-link">
-              <img src="./images/m.png" data-src="./images/m.png" alt="Подарунковий сертифікат" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div id="photo-modal" class="modal">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="modal-image" />
-      </div>
+      <div id="photo-gallery-container"></div>
 
       <div class="page page-cover text-center">
+        <h2 class="visually-hidden">З любов'ю</h2>
         <p class="text-2xl">З любов'ю від спільноти</p>
       </div>
     </div>
+
+    <div id="photo-modal" class="modal">
+      <span class="modal-close">&times;</span>
+      <img class="modal-content" id="modal-image" />
+      <a id="modal-prev" class="modal-btn prev">&#10094;</a>
+      <a id="modal-next" class="modal-btn next">&#10095;</a>
+      <div id="modal-pagination" class="modal-pagination"></div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
